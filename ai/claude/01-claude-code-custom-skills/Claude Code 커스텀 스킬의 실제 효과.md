@@ -15,7 +15,7 @@ Claude Code로 코드를 생성할 때 프롬프트만 잘 쓰면 된다고 생�
 
 ## 실험 환경
 
-- agent, skills, commands는 [Kent Beck의 글](https://tidyfirst.substack.com/)을 참고하여 작성했다.
+- agent, skills, commands는 [Kent Beck의 글](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes/)을 참고하여 작성했다.
 - 사용된 스킬은 본 문서와 같은 디렉토리의 `agents/`, `commands/`, `skills/` 폴더에서 확인할 수 있다.
 
 ### 사용한 스킬 구성
@@ -43,16 +43,13 @@ Claude Code로 코드를 생성할 때 프롬프트만 잘 쓰면 된다고 생�
 두 프로젝트 모두 동일한 프롬프트로 시작했다:
 
 ```
-Java와 Gradle을 사용하여 태스크 관리 CLI 앱을 만들어줘.
+JSON 파일을 저장소로 사용하는 CLI 태스크 관리 도구를 만들어줘.
 
-기능 요구사항:
 - 태스크 CRUD (생성, 조회, 수정, 삭제)
-- 상태 관리 (TODO, IN_PROGRESS, DONE)
-- 우선순위 관리 (LOW, MEDIUM, HIGH)
-- 태그 기능
-- 검색 및 필터링 (상태별, 우선순위별, 태그별)
-- 통계 리포트 (상태별 개수, 우선순위별 개수)
-- JSON 파일로 데이터 저장
+- 우선순위, 마감일, 태그 지원
+- 태스크 필터링 및 검색
+- 상태 변경 이력 추적
+- 통계 리포트 생성
 ```
 
 구현된 기능:
