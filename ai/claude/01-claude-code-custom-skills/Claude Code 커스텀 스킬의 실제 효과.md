@@ -15,8 +15,8 @@ Claude Code로 코드를 생성할 때 프롬프트만 잘 쓰면 된다고 생�
 
 ## 실험 환경
 
-- agent,skills,commands 는 켄트백형님이 작성한 글을 참고하여 작성했다.
-- 사용된 스킬은 https://github.com/dhrod0325/tech-notes/tree/main/ai/claude/claude-code-%EC%BB%A4%EC%8A%A4%ED%85%80%EC%8A%A4%ED%82%AC%EC%9D%98-%EC%8B%A4%EC%A0%9C-%ED%9A%A8%EA%B3%BC 에서 확인할수있다.
+- agent, skills, commands는 [Kent Beck의 글](https://tidyfirst.substack.com/)을 참고하여 작성했다.
+- 사용된 스킬은 본 문서와 같은 디렉토리의 `agents/`, `commands/`, `skills/` 폴더에서 확인할 수 있다.
 
 ### 사용한 스킬 구성
 
@@ -40,7 +40,22 @@ Claude Code로 코드를 생성할 때 프롬프트만 잘 쓰면 된다고 생�
 
 ### 동일 요구사항
 
-두 프로젝트 모두 다음 기능을 구현했다:
+두 프로젝트 모두 동일한 프롬프트로 시작했다:
+
+```
+Java와 Gradle을 사용하여 태스크 관리 CLI 앱을 만들어줘.
+
+기능 요구사항:
+- 태스크 CRUD (생성, 조회, 수정, 삭제)
+- 상태 관리 (TODO, IN_PROGRESS, DONE)
+- 우선순위 관리 (LOW, MEDIUM, HIGH)
+- 태그 기능
+- 검색 및 필터링 (상태별, 우선순위별, 태그별)
+- 통계 리포트 (상태별 개수, 우선순위별 개수)
+- JSON 파일로 데이터 저장
+```
+
+구현된 기능:
 
 - 태스크 CRUD
 - 상태/우선순위/태그 관리
@@ -485,9 +500,11 @@ public class Calculator {
 |----------|----------------|------------------|
 | 테스트 코드량  | 1,252 LOC      | 753 LOC          |
 | 테스트 파일 수 | 6개             | 6개               |
-| E2E 테스트  | 있음             | 없음               |
+| E2E 테스트  | 있음 (CLI 전체 흐름) | 없음               |
 | Mocking  | Mockito 사용     | 미사용              |
 | 커버리지 측정  | JaCoCo 설정      | 없음               |
+
+Project-1의 E2E 테스트는 CLI 명령어를 실행하고 JSON 파일 출력까지 검증하는 전체 흐름 테스트다. 스킬에 "테스트 피라미드: 단위(70%), 통합(20%), E2E(10%)"를 명시했기 때문에 E2E 테스트가 포함됐다.
 
 ### 의존성 차이
 
