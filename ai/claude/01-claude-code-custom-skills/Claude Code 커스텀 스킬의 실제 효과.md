@@ -16,6 +16,7 @@ Claude Code로 코드를 생성할 때 프롬프트만 잘 쓰면 된다고 생�
 ## 실험 환경
 
 - agent,skills,commands 는 켄트백형님이 작성한 글을 참고하여 작성했다.
+- 사용된 스킬은 https://github.com/dhrod0325/tech-notes/tree/main/ai/claude/claude-code-%EC%BB%A4%EC%8A%A4%ED%85%80%EC%8A%A4%ED%82%AC%EC%9D%98-%EC%8B%A4%EC%A0%9C-%ED%9A%A8%EA%B3%BC 에서 확인할수있다.
 
 ### 사용한 스킬 구성
 
